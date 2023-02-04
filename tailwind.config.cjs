@@ -5,6 +5,9 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily:{
+      "Poppins" : ["Poppins" ,"sans-serif"]
+    },
     screens:{
       sm:"480px",
       md:"768px",
@@ -12,7 +15,11 @@ module.exports = {
       xl:"1440px",
       "2xl": "1920px",
     },
-    extend: {},
+    extend: {
+      rotate:{
+        "270" : "270deg"
+      },
+    },
   },
   plugins: [],
 }
