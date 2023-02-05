@@ -9,15 +9,17 @@ import {
 } from "../../assets/icons";
 import MobileNavClock from "./MobileNavClock";
 import { Transition } from "@headlessui/react";
+import logo from "../../assets/image/logo.png";
 export default function Header() {
   const [showMobileNav, setShowMobileNav] = useState(false);
   return (
     <header className="fixed top-0 left-0 w-full py-5 px-[6.25%] text-white flex justify-between z-50">
-      <NavLink className="text-2xl" to="/">
-        Moon
-      </NavLink>
-
       <div className="grid grid-cols-2 items-center justify-items-center">
+        <div>
+          <div onClick={() => setShowMobileNav(true)}>
+            <HiMenuAlt4 size={26} />
+          </div>
+        </div>
         <div className="hidden md:flex justify-center items-center gap-x-4">
           <Link to="/" className="w-7 h-7">
             <FaTelegramPlane className="w-full h-full hover:fill-[#0088CC]" />
@@ -32,12 +34,6 @@ export default function Header() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75" />
             <SiWhatsapp className="relative inline-flex h-full w-full hover:fill-[#25D366]" />
           </Link>
-        </div>
-
-        <div>
-          <div onClick={() => setShowMobileNav(true)}>
-            <HiMenuAlt4 size={26} />
-          </div>
         </div>
       </div>
       <Transition
@@ -66,6 +62,9 @@ export default function Header() {
           <h1 className="text-center text-2xl font-Poppins uppercase">Moon</h1>
         </div>
       </Transition>
+      <NavLink className="text-2xl rounded w-20 h-10 overflow-hidden" to="/">
+        <img src={logo} className="w-full h-full" alt="mainLogo" />
+      </NavLink>
     </header>
   );
 }
