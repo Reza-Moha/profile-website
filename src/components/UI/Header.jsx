@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import AOS from "aos";
 import {
   HiMenuAlt4,
   AiOutlineClose,
@@ -8,12 +7,10 @@ import {
   GrInstagram,
   FaTelegramPlane,
 } from "../../assets/icons";
-import Index from "./MobileNavClock/index.jsx";
+import MobileNavClock from "./MobileNavClock";
+import { Transition } from "@headlessui/react";
 export default function Header() {
   const [showMobileNav, setShowMobileNav] = useState(false);
-  useEffect(() => {
-    AOS.init();
-  }, [showMobileNav]);
   return (
     <header className="fixed top-0 left-0 w-full py-5 px-[6.25%] text-white flex justify-between z-50">
       <NavLink className="text-2xl" to="/">
@@ -36,34 +33,39 @@ export default function Header() {
             <SiWhatsapp className="relative inline-flex h-full w-full hover:fill-[#25D366]" />
           </Link>
         </div>
-        {!showMobileNav && (
-          <div>
-            <HiMenuAlt4
-              onClick={(e) => setShowMobileNav(!showMobileNav)}
-              size={45}
-            />
-          </div>
-        )}
-      </div>
 
-      <nav
-        data-aos="fade-left"
-        className={
-          showMobileNav
-            ? "fixed top-0 right-0 w-1/2 h-full bg-gradient-to-tl from-gray-700 via-gray-900 to-black p-4 transition-all ease-in-out "
-            : "hidden"
-        }
+        <div>
+          <div onClick={() => setShowMobileNav(true)}>
+            <HiMenuAlt4 size={26} />
+          </div>
+        </div>
+      </div>
+      <Transition
+        enter="transition-opacity duration-75"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-150"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+        className="fixed z-40 top-0 right-0 w-full h-screen bg-gradient-to-tl from-gray-700 via-gray-900 to-black p-4 transition-all ease-in-out "
+        show={showMobileNav}
       >
-        <div className="w-full flex justify-end ">
-          <span className="w-6 h-6 rounded inline-flex items-center border border-indigo-700 shadow shadow-indigo-600 hover:scale-105 transition-all ease-linear cursor-pointer">
-            <AiOutlineClose
-              onClick={(e) => setShowMobileNav(false)}
-              size={24}
-            />
+        <div
+          className="flex justify-end group"
+          onClick={() => setShowMobileNav(false)}
+        >
+          <span
+            className="w-10 h-10 bg-gradient-to-tr from-gray-700 via-gray-900 to-black rounded-md border
+           border-indigo-500 shadow shadow-indigo-300 inline-flex justify-center items-center group-hover:shadow-lg cursor-pointer"
+          >
+            <AiOutlineClose size={26} />
           </span>
         </div>
-        <Index />
-      </nav>
+        <MobileNavClock />
+        <div className="w-full border-t border-indigo-400 rounded p-2">
+          <h1 className="text-center text-2xl font-Poppins uppercase">Moon</h1>
+        </div>
+      </Transition>
     </header>
   );
 }

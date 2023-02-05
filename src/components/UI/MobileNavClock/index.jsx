@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Clock from "react-clock";
 import "react-clock/dist/Clock.css";
 
-export default function Index() {
+export default function MobileNavClock() {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
