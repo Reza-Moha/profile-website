@@ -7,17 +7,26 @@ import {
   GrInstagram,
   FaTelegramPlane,
 } from "../../assets/icons";
+import AOS from "aos";
 import MobileNavClock from "./MobileNavClock";
 import { Transition } from "@headlessui/react";
 import logo from "../../assets/image/logo.png";
+import { TfiYoutube } from "../../assets/icons";
 export default function Header() {
   const [showMobileNav, setShowMobileNav] = useState(false);
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <header className="fixed top-0 left-0 w-full py-5 px-[6.25%] text-white flex justify-between z-50">
+    <header
+      data-aos="fade-down"
+      data-aos-delay="400"
+      className="fixed top-0 left-0 w-full py-5 px-[6.25%] text-white flex justify-between z-50"
+    >
       <div className="grid grid-cols-2 items-center justify-items-center">
         <div>
           <div onClick={() => setShowMobileNav(true)}>
-            <HiMenuAlt4 size={26} />
+            <HiMenuAlt4 size={30} />
           </div>
         </div>
         <div className="hidden md:flex justify-center items-center gap-x-4">
@@ -26,6 +35,9 @@ export default function Header() {
           </Link>
           <Link to="/" className="w-7 h-7">
             <GrInstagram className="w-full h-full hover:fill-[#E4405F]" />
+          </Link>
+          <Link to="/" className="w-7 h-7">
+            <TfiYoutube className="w-full h-full hover:fill-[#FF0000]" />
           </Link>
           <Link
             to="https://wa.me/989145650080"

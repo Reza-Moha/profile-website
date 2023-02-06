@@ -1,7 +1,18 @@
+import AOS from "aos";
+import { useEffect } from "react";
+
 export default function Moon() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
-      <div className="col-span-1 relative">
+      <div
+        data-aos="zoom-in-right"
+        data-aos-delay="900"
+        className="col-span-1 relative"
+      >
         {/*Moon*/}
         <svg
           data-value="0"

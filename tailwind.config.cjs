@@ -9,7 +9,9 @@ module.exports = {
     fontFamily:{
       "Poppins" : ["Poppins" ,"sans-serif"]
     },
-
+    container:{
+      center:true
+    },
     extend: {
       rotate:{
         "270" : "270deg"
