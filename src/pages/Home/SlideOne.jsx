@@ -1,15 +1,7 @@
 import { useEffect } from "react";
-import Moon from "../../components/UI/Moon/Moon.jsx";
+import Moon from "../../components/UI/Moon/Moon";
 import AOS from "aos";
-import {
-  FaNodeJs,
-  IoLogoHtml5,
-  IoLogoJavascript,
-  SiNextdotjs,
-  SiReact,
-  SiTailwindcss,
-  SiWebstorm,
-} from "../../assets/icons";
+import SkillsIcons from "../../components/UI/SkillsIcons";
 
 export default function SlideOne() {
   useEffect(() => {
@@ -34,29 +26,7 @@ export default function SlideOne() {
             <span className="ml-12 block w-20 h-1 rounded bg-gradient-to-tr from-rose-700 to-pink-600"></span>
           </div>
           <h1 className="text-4xl py-1">Web Designer</h1>
-          <div className="grid grid-cols-7 justify-items-center text-center gap-3">
-            <span>
-              <IoLogoHtml5 size={26} />
-            </span>
-            <span>
-              <SiTailwindcss size={26} />
-            </span>
-            <span>
-              <SiReact size={26} />
-            </span>
-            <span>
-              <IoLogoJavascript size={26} />
-            </span>
-            <span>
-              <SiNextdotjs size={26} />
-            </span>
-            <span>
-              <SiWebstorm size={26} />
-            </span>
-            <span>
-              <FaNodeJs size={26} />
-            </span>
-          </div>
+          <SkillsIcons />
         </div>
       </section>
     </>

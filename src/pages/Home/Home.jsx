@@ -1,4 +1,4 @@
-import Header from "../../components/UI/Header.jsx";
+import Header from "../../components/UI/Header";
 import Main from "./Main";
 
 export default function Home() {

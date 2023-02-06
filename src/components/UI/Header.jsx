@@ -37,7 +37,7 @@ export default function Header() {
             <GrInstagram className="w-full h-full hover:fill-[#E4405F]" />
           </Link>
           <Link to="/" className="w-7 h-7">
-            <TfiYoutube className="w-full h-full hover:fill-[#FF0000]" />
+            <TfiYoutube className="w-full h-full hover:fill-red-500" />
           </Link>
           <Link
             to="https://wa.me/989145650080"
