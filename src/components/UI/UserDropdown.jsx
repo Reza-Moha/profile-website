@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 export default function UserDropdown() {
   const { user } = useSelector((state) => state.userSlice);
   return (
-    <div className="w-full h-full" onClick={(e) => e.stopPropagation()}>
+    <div className="w-full h-full ">
       <Menu as="div" className="w-full h-full relative inline-block">
         <div className="w-full h-full">
           <Menu.Button className="w-full h-full flex justify-center items-center text-center">
@@ -49,7 +49,9 @@ export default function UserDropdown() {
                         aria-hidden="true"
                       />
                     )}
-                    {user.email}
+                    {user.email.length > 22
+                      ? "..." + user.email.slice(0, 22)
+                      : user.email}
                   </h1>
                 )}
               </Menu.Item>
