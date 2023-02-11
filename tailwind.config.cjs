@@ -7,7 +7,8 @@ module.exports = {
   ],
   theme: {
     fontFamily:{
-      "Poppins" : ["Poppins" ,"sans-serif"]
+      "Poppins" : ["Poppins" ,"sans-serif"],
+      "sansUltraLight" : ["sansUltraLight" ,"sans-serif"]
     },
     container:{
       center:true

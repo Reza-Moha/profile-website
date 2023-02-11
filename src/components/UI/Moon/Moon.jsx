@@ -9,7 +9,7 @@ export default function Moon() {
   return (
     <>
       <div
-        data-aos="zoom-in-right"
+        data-aos="zoom-in-left"
         data-aos-delay="900"
         className="col-span-1 relative"
       >

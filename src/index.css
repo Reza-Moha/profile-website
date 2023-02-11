@@ -5,8 +5,16 @@
 @tailwind utilities;
 
 
+@font-face {
+    font-family: "sansUltraLight";
+    src: local("sansUltraLight"),
+    url("./assets/fonts/iranSans/ttf/sansMedium.ttf") format("truetype");
+    font-weight: 400;
+}
+
+
 @layer base {
-    html{
+    html,#root{
         @apply w-full h-full
     }
     body{

@@ -1,0 +1,18 @@
+.section{
+    @apply w-full h-full flex justify-center items-center text-center text-white font-sansUltraLight
+}
+.mainContainer{
+    @apply container max-w-sm mx-auto  bg-gray-800 rounded-lg shadow-lg shadow-slate-800/50 border border-gray-900 flex flex-col justify-start gap-y-4 text-center items-center p-1
+}
+.signInMethod{
+    @apply w-full col-span-1 p-2 cursor-pointer border border-gray-700 rounded hover:bg-gray-700 hover:border-gray-900 inline-flex justify-center items-center gap-x-4
+}
+.signInMethodApple{
+  @apply  w-full col-span-2 p-2 cursor-pointer border border-gray-700 rounded hover:bg-gray-700 hover:border-gray-900 inline-flex justify-center items-center gap-x-4
+}
+.inputs{
+    @apply w-full py-1 px-3 bg-gray-700 rounded shadow-md shadow-gray-800/50 outline-none focus:outline-none focus:border focus:border-violet-700 focus:bg-gray-700 placeholder:text-xs
+}
+.inputs:focus + *{
+    color: #6366f1;
+}
