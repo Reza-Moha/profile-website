@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {
   getAuth,
+    createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
@@ -74,3 +75,12 @@ export const AppleAuth = async () => {
     toast.error(err.code);
   }
 };
+
+export const register = async (email, password) =>{
+  try {
+    const {user} =await createUserWithEmailAndPassword(auth, email, password)
+    return user
+  }catch (err){
+    toast.error(err.code)
+  }
+}

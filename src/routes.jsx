@@ -4,6 +4,7 @@ import AuthLayout from "./pages/auth/AuthLayout.jsx";
 import UserProfile from "./pages/user/index.jsx";
 import PrivateRoute from "./components/PrivateRoute";
 import Register from "./pages/auth/Register";
+import AdminDashboard from "./pages/auth/AdminDashboard";
 
 const routes = [
   {
@@ -13,6 +14,11 @@ const routes = [
       {
         path: "userprofile",
         element: <UserProfile />,
+        auth: true,
+      },
+      {
+        path: "adminDashboard",
+        element: <AdminDashboard />,
         auth: true,
       },
     ],

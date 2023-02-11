@@ -1,11 +1,11 @@
 export default function MoonLight() {
   return (
     <>
-      <section className="w-full h-screen fixed inset-0 -z-50">
+      <section className="w-full h-screen fixed  inset-0 -z-50">
         <div className="w-screen h-screen relative">
           <svg
             data-value="-6"
-            className="object absolute w-[800px] -top-[23%] -left-20 md:w-[750px] md:-top-12 md:-left-44 lg:-left-28 xl:-left-16 2xl:w-[850px] -z-50"
+            className="object absolute w-[800px] -bottom-[25%] -left-16 md:w-[750px] md:-top-12 md:-left-44 lg:-left-24 xl:-top-8 xl:-left-12 2xl:w-[850px] 2xl:-left-9 2xl:-top-10 -z-50"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1385 1385"
           >

@@ -16,7 +16,7 @@ export default function Moon() {
         {/*Moon*/}
         <svg
           data-value="0"
-          className="object relative top-16 w-[300px] md:w-[320px] md:top-40 md:left-2 xl:-left-2 xl:top-[10.5rem]  2xl:w-[350px] 2xl:top-52 2xl:-left-6 z-40"
+          className="object relative top-12 left-2 w-[320px] md:w-[300px] md:top-44  md:-left-3 lg:left-0 xl:-left-2 xl:top-[11rem]  2xl:w-[350px] 2xl:top-52 2xl:-left-6 z-40"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 545 545"
         >
@@ -58,7 +58,7 @@ export default function Moon() {
         {/*  Cloud two */}
         <svg
           data-value="3"
-          className="object absolute top-[60%] -right-28 w-[240px] md:w-[260px] md:-right-36 md:top-[47%]  2xl:-right-32 2xl:top-[50%] z-40"
+          className="object absolute top-[60%] -right-28 w-[240px] md:w-[240px] md:-right-30 md:top-[45%]  2xl:-right-32 2xl:top-[50%] z-40"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 482 231"
         >

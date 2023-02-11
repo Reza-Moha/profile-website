@@ -96,7 +96,7 @@ export default function SkillsIcons() {
 
   return (
     <>
-      <div className="grid grid-cols-7 justify-items-center text-center gap-3">
+      <div className="grid grid-cols-7 justify-items-center text-center gap-3 select-none">
         {skillsData.map((svg, index) => {
           return (
             <div key={svg.id} className="flex h-7 w-7 relative inline-block">

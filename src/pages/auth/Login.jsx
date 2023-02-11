@@ -11,7 +11,7 @@ import logo from "../../assets/image/logo.png";
 import { Helmet } from "react-helmet";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { GithubAuth, GoogleAuth, login } from "../../fireBase";
-import { Formik, useFormik } from "formik";
+import { useFormik } from "formik";
 import LoginValidate from "../../validations";
 
 export default function Login() {
@@ -34,17 +34,22 @@ export default function Login() {
       replace: true,
     });
   }
+
   async function googleAuthHandler() {
-    await GoogleAuth();
-    navigate(location.state?.return_url || "/", {
-      replace: true,
-    });
+    const user = await GoogleAuth();
+    if (user) {
+      navigate(location.state?.return_url || "/", {
+        replace: true,
+      });
+    }
   }
   async function githubAuthHandler() {
-    await GithubAuth();
-    navigate(location.state?.return_url || "/", {
-      replace: true,
-    });
+    const user = await GithubAuth();
+    if (user) {
+      navigate(location.state?.return_url || "/", {
+        replace: true,
+      });
+    }
   }
   return (
     <>
@@ -128,7 +133,7 @@ export default function Login() {
             <button
               disabled={!formik.isValid || !formik.dirty}
               type="submit"
-              className="bg-violet-600 text-slate-900 rounded p-1 disabled:opacity-40"
+              className="bg-violet-600 text-slate-900 rounded p-1 disabled:opacity-20"
             >
               ورود
             </button>

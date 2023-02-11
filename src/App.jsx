@@ -13,7 +13,7 @@ export default function App() {
   useEffect(() => {
     let timeOut = setTimeout(() => {
       setRedirect(true);
-    }, 1000);
+    }, 2000);
 
     return () => {
       clearTimeout(timeOut);

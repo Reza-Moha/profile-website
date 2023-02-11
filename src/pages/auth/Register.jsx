@@ -7,9 +7,10 @@ import {
 import styles from "./login.module.css";
 import logo from "../../assets/image/logo.png";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { RegisterValidate } from "../../validations/index.jsx";
+import { register } from "../../fireBase/index.js";
 
 export default function Register() {
   const [show, setShow] = useState({ password: false, confirmPassword: false });
@@ -25,8 +26,15 @@ export default function Register() {
     onSubmit: registerHandler,
   });
 
+  const navigate = useNavigate()
+
   async function registerHandler(values) {
-    console.log(values);
+ const user =  await register(values.email, values.password)
+  if(user){
+    navigate(location.state?.return_url || "/", {
+      replace: true,
+    });
+  }
   }
   return (
     <>
@@ -177,7 +185,8 @@ export default function Register() {
 
               <button
                 type="submit"
-                className="bg-violet-600 text-slate-900 rounded p-1"
+                disabled={!formik.isValid || !formik.dirty}
+                className="bg-violet-600 disabled:opacity-20 text-slate-900 rounded p-1"
               >
                 ثبت نام
               </button>

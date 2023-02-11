@@ -24,11 +24,8 @@
         background-image: -webkit-linear-gradient(top, #072142, #061c37, #07182b, #061220, #020b16);
         background-image: -o-linear-gradient(top, #072142, #061c37, #07182b, #061220, #020b16);
         background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
-        ::ms-overflow-style: none;
         scrollbar-width: none;
     }
-    ::-webkit-scrollbar {
-        display: none;
-    }
+
 
 }
